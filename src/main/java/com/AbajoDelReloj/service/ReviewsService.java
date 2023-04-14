@@ -34,11 +34,11 @@ public class ReviewsService {
         return reviewsRepository.findAll();
     }
 
-    public Reviews obtenerReviewPorId(Long idreview) {
-        return reviewsRepository.findById(idreview).orElse(null);
+    public Reviews obtenerReviewPorId(Long id_review) {
+        return reviewsRepository.findById(id_review).orElse(null);
     }
 
-    public void eliminarReview(Long idreview) {
-        reviewsRepository.deleteById(idreview);
+    public void eliminarReview(Long id_review) {
+        reviewsRepository.deleteById(id_review);
     }
 }

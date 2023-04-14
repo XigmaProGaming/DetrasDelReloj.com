@@ -32,9 +32,9 @@ public class ImagenesService {
 		 	//2. Si hay algo en el Optional(.isPresent()), mostrarmos un error
 			
 			Optional<Imagenes> imagenBuscada = 
-					imagenesRepository.findByName(imagen.getImageName());
+					imagenesRepository.findByName(imagen.getImage_Name());
 			if(imagenBuscada.isPresent()) {	//Si el Optional contiene un objeto almecando, mostramos un error
-				throw new IllegalStateException("La imagen con el nombre " + imagen.getImageName() + " ya existe.");
+				throw new IllegalStateException("La imagen con el nombre " + imagen.getImage_Name() + " ya existe.");
 			} else {	//Si el Optional esta vacio, se guarda el platillo en mi base da datos usando el repository como interfaz
 			 imagenesRepository.save(imagen);
 			}
@@ -60,7 +60,7 @@ public class ImagenesService {
 				//Si existe el producto -> se modifica
 				if(imagenesRepository.existsById(Id)) {
 					Imagenes imagenABuscar = imagenesRepository.getById(Id);
-					if (name!=null) imagenABuscar.setImageName(name);
+					if (name!=null) imagenABuscar.setImage_Name(name);
 					
 					
 					//Cuando terminamos de editar el objeto, guardamos la entidad en el id correspondiente

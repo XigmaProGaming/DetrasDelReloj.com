@@ -44,7 +44,9 @@ public class ProductoService {
 	}// leer platillo
 	
 	// ActualizarProducto
-	public void actualizarProducto(Long Id, String name, String description, String brand, Double price, Long inventory, String state, Long sku, String visibility,Long id_category, Long id_seller) {
+	public void actualizarProducto(Long Id, String name, String description, String brand, Double price, String publication_Date,Long inventory, String state,
+			Long sku, String visibility, Long productcategories_id_category,
+			Long seller_id_seller) {
 		// We define if the product already exists , so we modify it
 		if(productoRepository.existsById(Id)) {
 			// Then I will modify it
@@ -53,13 +55,13 @@ public class ProductoService {
 			if(name != null) productoABuscar.setName(name);
 			if(description != null) productoABuscar.setDescription(description);
 			if(brand != null) productoABuscar.setBrand(brand);
-			if(price > 0) productoABuscar.setPrice(price);
-			if(inventory > 0 && inventory != null) productoABuscar.setInventory(inventory);
+			if(price != null&& price > 0) productoABuscar.setPrice(price);
+			if(publication_Date != null) productoABuscar.setPublication_Date(publication_Date);
+			if(inventory != null && inventory > 0) productoABuscar.setInventory(inventory);
 			if(state != null) productoABuscar.setState(state);
-			if(sku > 0 && sku != null) productoABuscar.setSku(sku);
-			if(visibility != null) productoABuscar.setVisibility(visibility);			
-			
-			
+			if(sku != null && sku > 0) productoABuscar.setSku(sku);
+			if(visibility != null) productoABuscar.setVisibility(visibility);					
+			if(productcategories_id_category != null && inventory > 0) productoABuscar.setSeller_id_seller(seller_id_seller);
 			productoRepository.save(productoABuscar);
 		}else {
 			System.out.println("El producto con el id "+Id+" no existe");

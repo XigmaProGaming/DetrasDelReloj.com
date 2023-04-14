@@ -12,6 +12,5 @@ import com.AbajoDelReloj.model.Producto;
 public interface ProductoRepository extends JpaRepository<Producto,Long>{
 	
 	@Query("SELECT producto FROM Producto producto WHERE producto.name=?1")
-	
 	Optional<Producto> findByName(String name);
 }

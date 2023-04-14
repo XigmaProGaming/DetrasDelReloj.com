@@ -23,10 +23,10 @@ public class Imagenes {
 		una columa llamada id, unica y no nula
 	 */
 	//Atributos
-	@Column(name="idImage")
-	private Long idImage;
-	@Column(name = "imageName")
-	private String imageName;
+	@Column(name="id_Image")
+	private Long id_Image;
+	@Column(name = "image_Name")
+	private String image_Name;
 	@Column(name = "products_idproducts")
 	private Long products_idproducts;
 	
@@ -36,18 +36,18 @@ public class Imagenes {
 	
 	//Constructores
 	public Imagenes(Long idImage, String imageName, Long products_idproducts) {
-		this.idImage = idImage;
-		this.imageName = imageName;
+		this.id_Image = idImage;
+		this.image_Name = imageName;
 		this.products_idproducts = products_idproducts;
 	}
 	//Getters y Setters
 
-	public String getImageName() {
-		return imageName;
+	public String getImage_Name() {
+		return image_Name;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
+	public void setImage_Name(String imageName) {
+		this.image_Name = imageName;
 	}
 
 	public Long getProducts_idproducts() {
@@ -58,14 +58,14 @@ public class Imagenes {
 		this.products_idproducts = products_idproducts;
 	}
 
-	public Long getIdImage() {
-		return idImage;
+	public Long getId_Image() {
+		return id_Image;
 	}
 
 	//toString
 	@Override
 	public String toString() {
-		return "Imagenes [IdImage=" + idImage + ", imageName=" + imageName + ", products_idproducts="
+		return "Imagenes [IdImage=" + id_Image + ", imageName=" + image_Name + ", products_idproducts="
 				+ products_idproducts + "]";
 	}
 	
@@ -76,5 +76,4 @@ public class Imagenes {
 	
 	
 }//cierre class
-
 

@@ -68,16 +68,16 @@ public class UsuarioService {
 	}
 	
 	//Leer un platillo (Read)
-	public Usuario leerUsuario(Long Id) {
-		return usuarioRepository.findById(Id).orElseThrow(()-> new IllegalStateException("El Producto " + "con el id " + Id + " no existe.") );
+	public Usuario leerUsuario(Long id_seller) {
+		return usuarioRepository.findById(id_seller).orElseThrow(()-> new IllegalStateException("El Producto " + "con el id " + id_seller + " no existe.") );
 	}
 	
 	//Actualizar usuarios (Upadte)
 	//Necesitamos pasar todos los parametros, para contemplra todas las modificaciones posibles
-		public void actualizarUsuario(Long Id, String name, String last_name, Long telephone, String password) {
+		public void actualizarUsuario(Long id_seller, String name, String last_name, Long telephone, String password) {
 			//Si existe el producto -> se modifica
-			if(usuarioRepository.existsById(Id)) {
-				Usuario usuarioABuscar = usuarioRepository.getById(Id);
+			if(usuarioRepository.existsById(id_seller)) {
+				Usuario usuarioABuscar = usuarioRepository.getById(id_seller);
 				if (name!=null) usuarioABuscar.setName(name);
 				if (last_name!=null) usuarioABuscar.setLast_name(last_name);
 				if (telephone!=null) usuarioABuscar.setTelephone(telephone);
@@ -86,20 +86,20 @@ public class UsuarioService {
 				//Cuando terminamos de editar el objeto, guardamos la entidad en el id correspondiente
 				usuarioRepository.save(usuarioABuscar);
 			} else {
-				System.out.println("El usuario con el Id: " + Id + " no existe.");
+				System.out.println("El usuario con el Id: " + id_seller + " no existe.");
 			}
 			//Si no existe el producto -> no podemos modificar nada
 		}
 	
 	 
 	//Borrar usuario (Delete)
-		public void borrarUsuario(Long Id) {
+		public void borrarUsuario(Long id_seller) {
 			//Buscamos un platillo por id, y si existe lo borramos por Id
-			if(usuarioRepository.existsById(Id)) {
+			if(usuarioRepository.existsById(id_seller)) {
 				//Metodo para borrar el elemento por id
-				usuarioRepository.deleteById(Id);
+				usuarioRepository.deleteById(id_seller);
 			}else {
-				System.out.println("El usuario con el Id: " + Id + " no existe.");
+				System.out.println("El usuario con el Id: " + id_seller + " no existe.");
 			}
 			
 		}

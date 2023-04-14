@@ -17,11 +17,11 @@ public interface ImagenesRepository extends JpaRepository<Imagenes, Long>{
 	//Metodo que realiza la consulta eprsonalizada definida anteriormente.
 	//Retorna un Optional1 que puede contener un objete Platillo si se encuentra en la bas de datos
 	//(Tiene que ser con el nombre especificado o un Optional vacio si no existe)
-	@Query("SELECT imagen FROM Imagenes imagen WHERE imagen.imageName=?1")	//Alia "p" ?1 = primer parametro como arguemnto de la consulta
+	@Query("SELECT imagen FROM Imagenes imagen WHERE imagen.image_Name=?1")	//Alia "p" ?1 = primer parametro como arguemnto de la consulta
 	
 	// 	"p" es un alias para especificar que despues de la palabra FROM en esta consulta, hacemos referencia a
 	// 	un objeto dentro de esa tabla
 	 
-	Optional<Imagenes> findByName(String imageName);
+	Optional<Imagenes> findByName(String image_Name);
 
 }
