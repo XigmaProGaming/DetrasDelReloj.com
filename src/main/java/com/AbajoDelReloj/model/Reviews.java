@@ -13,8 +13,8 @@ public class Reviews {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idreview")
-    private Long idReview;
+    @Column(name = "id_review")
+    private Long id_Review;
 
     @Column(name = "review")
     private String review;
@@ -36,7 +36,7 @@ public class Reviews {
 
 	public Reviews(Long idReview, String review, Float valoracion, Long products_idproducts) {
 	
-	this.idReview = idReview;
+	this.id_Review = idReview;
 	this.review = review;
 	this.valoracion = valoracion;
 	this.products_idproducts = products_idproducts;
@@ -44,10 +44,10 @@ public class Reviews {
 	
 	// getters y setters
 	public Long getIdReview() {
-		return idReview;
+		return id_Review;
 	}
 public void setIdReview(Long idReview) {
-		this.idReview = idReview;
+		this.id_Review = idReview;
 	}
 
 	public String getReview() {
@@ -73,7 +73,7 @@ public void setIdReview(Long idReview) {
 
 	@Override
 	public String toString() {
-		return "Reviews [idReview=" + idReview + ", review=" + review + ", valoracion=" + valoracion
+		return "Reviews [id_Review=" + id_Review + ", review=" + review + ", valoracion=" + valoracion
 				+ ", products_idproducts=" + products_idproducts + "]";
 	}
 
@@ -87,3 +87,4 @@ public void setIdReview(Long idReview) {
     
     
 }
+

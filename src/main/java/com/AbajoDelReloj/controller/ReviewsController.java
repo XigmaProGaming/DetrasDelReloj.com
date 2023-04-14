@@ -36,9 +36,9 @@ public class ReviewsController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
-    @GetMapping("/{idreview}")
-    public ResponseEntity<Reviews> obtenerReviewPorId(@PathVariable Long idreview) {
-        Reviews reviews = reviewService.obtenerReviewPorId(idreview);
+    @GetMapping("/{id_review}")
+    public ResponseEntity<Reviews> obtenerReviewPorId(@PathVariable Long id_review) {
+        Reviews reviews = reviewService.obtenerReviewPorId(id_review);
         //Si es nula, significa que no se encontró ninguna Review con el identificador proporcionado y, por lo tanto, se devuelve una ResponseEntity con el código de estado HTTP 404 (NOT FOUND).
         if (reviews == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -46,9 +46,9 @@ public class ReviewsController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{idreview}")
-    public ResponseEntity<Void> eliminarReview(@PathVariable Long idreview) {
-        reviewService.eliminarReview(idreview);
+    @DeleteMapping("/{id_review}")
+    public ResponseEntity<Void> eliminarReview(@PathVariable Long id_review) {
+        reviewService.eliminarReview(id_review);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

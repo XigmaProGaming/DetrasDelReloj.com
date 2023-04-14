@@ -30,6 +30,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	// 	"p" es un alias para especificar que despues de la palabra FROM en esta consulta, hacemos referencia a
 	// 	un objeto dentro de esa tabla
 	 
-	Optional<Usuario> findByName(String nombre);
+	Optional<Usuario> findByName(String username);
 
 }

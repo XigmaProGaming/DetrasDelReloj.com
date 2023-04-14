@@ -24,10 +24,10 @@ public class Usuario {
 		Especificamos que el campo donde se aplica la estrategia de generacion de valores autoincremetables es
 		una columa llamada id, unica y no nula
 	 */
-	@Column(name="idseller", unique=true, nullable=false)
+	@Column(name="id_seller", unique=true, nullable=false)
 	
 	//Atributos
-	private Long IdUsers;		//class wrapper
+	private Long id_seller;		//class wrapper
 	//@column name
 	private String name;
 	//@columna last_name
@@ -48,8 +48,8 @@ public class Usuario {
 	
 	
 	//Constructores
-	public Usuario(Long idUsers, String name, String last_name, String username, String email, String password, Long telephone) {
-		this.IdUsers = idUsers;
+	public Usuario(Long id_seller, String name, String last_name, String username, String email, String password, Long telephone) {
+		this.id_seller = id_seller;
 		this.name = name;
 		this.last_name = last_name;
 		this.username = username;
@@ -60,15 +60,9 @@ public class Usuario {
 
 
 	//Getters y Setters
-	public Long getIdUsers() {
-		return IdUsers;
+	public Long getId_seller() {
+		return id_seller;
 	}
-
-
-	public void setIdUsers(Long idUsers) {
-		IdUsers = idUsers;
-	}
-
 
 	public String getName() {
 		return name;
@@ -133,7 +127,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [IdUsers=" + IdUsers + ", name=" + name + ", last_name=" + last_name + ", username="
+		return "Usuario [id_seller=" + id_seller + ", name=" + name + ", last_name=" + last_name + ", username="
 				+ username + ", email=" + email + ", password=" + password + ", telephone=" + telephone + "]";
 	}
 	

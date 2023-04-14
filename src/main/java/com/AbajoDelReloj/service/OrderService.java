@@ -1,12 +1,12 @@
 package com.AbajoDelReloj.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.AbajoDelReloj.model.Order;
-
 import com.AbajoDelReloj.repository.OrderRepository;
 
 
@@ -38,6 +38,10 @@ public class OrderService {
 	//Logica de nuestro negocio
 	
 	//Crear ordenes (Create)
+	public void crearOrder(Order order) {
+		
+		orderRepository.save(order);
+	}
 	
 	//Leer ordenes (Read)
 	
@@ -48,14 +52,23 @@ public class OrderService {
 	
 	//Leer una orden (Read)
 	
-	public Order leerOrder(Long Id) {
-		return orderRepository.findById(Id).orElseThrow(()-> new IllegalStateException("La orden con el id " + Id + " no existe.") );
+	public Order leerOrder(Long id_Order) {
+		return orderRepository.findById(id_Order).orElseThrow(()-> new IllegalStateException("La orden con el id " + id_Order + " no existe.") );
 	}
 	
 	//Actualizar ordenes (Update)
 	
 	//Borrar orden (Delete)
-	
+	public void borrarOrder(Long id_Order) {
+		//Buscamos un platillo por id, y si existe lo borramos por Id
+		if(orderRepository.existsById(id_Order)) {
+			//Metodo para borrar el elemento por id
+			orderRepository.deleteById(id_Order);
+		}else {
+			System.out.println("El usuario con el Id: " + id_Order + " no existe.");
+		}
+		
+	}
 	
 	
 }//Fin de clase

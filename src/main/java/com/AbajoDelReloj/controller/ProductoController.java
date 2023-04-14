@@ -57,15 +57,16 @@ public class ProductoController {
 				@RequestParam (required = false) String name,
 				@RequestParam (required = false) String description,
 				@RequestParam (required = false) String brand,
-				@RequestParam (required = false) Double price,	
+				@RequestParam (required = false) Double price,
+				@RequestParam (required = false) String publication_Date,
 				@RequestParam (required = false) Long inventory,
 				@RequestParam (required = false) String state,
 				@RequestParam (required = false) Long sku,
 				@RequestParam (required = false) String visibility,	
-				@RequestParam (required = false) Long productcategories_idCategory,
-				@RequestParam (required = false) Long seller_idseller
+				@RequestParam (required = false) Long productcategories_id_category,
+				@RequestParam (required = false) Long seller_id_seller
 				) {
-		productoService.actualizarProducto(Id, name, description, brand, price, inventory, state, sku, visibility,productcategories_idCategory,seller_idseller);			
+		productoService.actualizarProducto(Id, name, description, brand, price, publication_Date,inventory, state, sku, visibility,productcategories_id_category,seller_id_seller);			
 	}
 	
 	// Solicitud HTTP DELETE para borrar un producto

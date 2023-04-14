@@ -53,8 +53,8 @@ public class UsuarioController {
 		@GetMapping(path="{Id}")
 		//Con @PathVariable le decimos a nuestro metodo que la ruta que va a cambiar es el id,
 		//con el tipo de dato Long
-		public Usuario getUusario(@PathVariable("Id")Long Id) {
-			return usuarioService.leerUsuario(Id);
+		public Usuario getUusario(@PathVariable("Id")Long id_seller) {
+			return usuarioService.leerUsuario(id_seller);
 		}
 		
 		
@@ -65,7 +65,7 @@ public class UsuarioController {
 		//Indicamos que los valores de los parametros se obtienen desde el Request Body
 		//Los datos que pasemos como cuerpo de nuestra solicitud, seran utlizados como campos de nuestro constructor
 		public void postUsuario(@RequestBody Usuario usuario) {
-			usuarioService.crearUsuario(usuario);; 	//Disparamos la operacion del CRUD que modifica la base da datos
+			usuarioService.crearUsuario(usuario); 	//Disparamos la operacion del CRUD que modifica la base da datos
 		}//Post
 
 		
@@ -75,13 +75,13 @@ public class UsuarioController {
 		//PUT usuario
 		@PutMapping(path="{Id}")
 		//(Long Id, String name, String last_name, Long telephone, String password)
-		public void updateUsuario(@PathVariable("Id")Long Id,
+		public void updateUsuario(@PathVariable("Id")Long id_seller,
 				@RequestParam (required = false) String name,
 				@RequestParam (required = false) String last_name,
 				@RequestParam (required = false) Long telephone,
 				@RequestParam (required = false) String password) {
 			//Aqui abajo si importa el orden (en el constructor)
-			usuarioService.actualizarUsuario(Id, name, last_name, telephone, password);
+			usuarioService.actualizarUsuario(id_seller, name, last_name, telephone, password);
 		}//Put
 		 
 		

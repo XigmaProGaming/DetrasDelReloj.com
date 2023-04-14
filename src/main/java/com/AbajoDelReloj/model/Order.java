@@ -24,161 +24,116 @@ public class Order {
 		una columa llamada id, unica y no nula
 	 */
 	
-	@Column(name="idOrder", unique=true, nullable=false)
+	@Column(name="id_Order", unique=true, nullable=false)
 	
 	//Atributos
-		private Long IdOrder;		//class wrapper
+		private Long id_Order;		//class wrapper
 		//@column name
-		private Float orderAmount;
+		private Float order_Amount;
 		//@columna last_name
-		private String orderShipName;
+		private String order_Ship_Name;
 		//@column user_name
-		private String orderShipStreet;
+		private String order_Ship_Street;
 		//@column correo
-		private String orderNumberOutdoor;
+		private String order_Number_Outdoor;
 		//@column user_name
-		private String orderNumberInterior;
+		private String order_Number_Interior;
+		//@column user_name
+		private String order_Colonia;
 		//@column precion
-		private Integer orderZip;
+		private Integer order_Zip;
 		//@column correo
-		private String orderAlcaldia;
+		private String order_Alcaldia;
 		//@column user_name
-		private String orderPhone;
+		private String order_Phone;
 		//@column user_name
-		private String orderInstruction;
+		private String order_Instruction;
 		//@column user_name
 		private Long products_idproducts;
 		
-		
-		
-
 		//Constructor vacio
 		public Order() {
 			
 		}//constructor vacio
 
-
-
 		//Constructor
-		public Order(Long idOrder, Float orderAmount, String orderShipName, String orderShipStreet,
-				String orderNumberOutdoor, String orderNumberInterior, Integer orderZip, String orderAlcaldia,
-				String orderPhone, String orderInstruction, Long products_idproducts) {
-			this.IdOrder = idOrder;
-			this.orderAmount = orderAmount;
-			this.orderShipName = orderShipName;
-			this.orderShipStreet = orderShipStreet;
-			this.orderNumberOutdoor = orderNumberOutdoor;
-			this.orderNumberInterior = orderNumberInterior;
-			this.orderZip = orderZip;
-			this.orderAlcaldia = orderAlcaldia;
-			this.orderPhone = orderPhone;
-			this.orderInstruction = orderInstruction;
+		public Order(Long id_Order, Float order_Amount, String order_Ship_Name, String order_Ship_Street,
+				String order_Number_Outdoor, String order_Number_Interior, Integer order_Zip, String order_Alcaldia,
+				String order_Phone, String order_Instruction, Long products_idproducts) {
+			this.id_Order = id_Order;
+			this.order_Amount = order_Amount;
+			this.order_Ship_Name = order_Ship_Name;
+			this.order_Ship_Street = order_Ship_Street;
+			this.order_Number_Outdoor = order_Number_Outdoor;
+			this.order_Number_Interior = order_Number_Interior;
+			this.order_Zip = order_Zip;
+			this.order_Alcaldia = order_Alcaldia;
+			this.order_Phone = order_Phone;
+			this.order_Instruction = order_Instruction;
 			this.products_idproducts = products_idproducts;
 		}
 
-
 		//Getters y setters
-
-		public Long getIdOrder() {
-			return IdOrder;
+		public Long getId_Order() {
+			return id_Order;
 		}
 
-		public void setIdOrder(Long idOrder) {
-			IdOrder = idOrder;
+		public Float getOrder_Amount() {
+			return order_Amount;
 		}
 
-		public Float getOrderAmount() {
-			return orderAmount;
-		}
-		
-		public void setOrderAmount(Float orderAmount) {
-			this.orderAmount = orderAmount;
-		}
-		
-		public String getOrderShipName() {
-			return orderShipName;
+		public String getOrder_Ship_Name() {
+			return order_Ship_Name;
 		}
 
-		public void setOrderShipName(String orderShipName) {
-			this.orderShipName = orderShipName;
+		public String getOrder_Ship_Street() {
+			return order_Ship_Street;
 		}
 
-		public String getOrderShipStreet() {
-			return orderShipStreet;
+		public String getOrder_Number_Outdoor() {
+			return order_Number_Outdoor;
 		}
 
-		public void setOrderShipStreet(String orderShipStreet) {
-			this.orderShipStreet = orderShipStreet;
+		public String getOrder_Number_Interior() {
+			return order_Number_Interior;
 		}
 
-		public String getOrderNumberOutdoor() {
-			return orderNumberOutdoor;
-		}
-		
-		public void setOrderNumberOutdoor(String orderNumberOutdoor) {
-			this.orderNumberOutdoor = orderNumberOutdoor;
+		public Integer getOrder_Zip() {
+			return order_Zip;
 		}
 
-		public String getOrderNumberInterior() {
-			return orderNumberInterior;
+		public String getOrder_Alcaldia() {
+			return order_Alcaldia;
 		}
 
-		public void setOrderNumberInterior(String orderNumberInterior) {
-			this.orderNumberInterior = orderNumberInterior;
-		}
-		
-		public Integer getOrderZip() {
-			return orderZip;
+		public String getOrder_Phone() {
+			return order_Phone;
 		}
 
-		public void setOrderZip(Integer orderZip) {
-			this.orderZip = orderZip;
+		public String getOrder_Instruction() {
+			return order_Instruction;
 		}
 
-		public String getOrderAlcaldia() {
-			return orderAlcaldia;
-		}
-
-		public void setOrderAlcaldia(String orderAlcaldia) {
-			this.orderAlcaldia = orderAlcaldia;
-		}
-
-		public String getOrderPhone() {
-			return orderPhone;
-		}
-
-		public void setOrderPhone(String orderPhone) {
-			this.orderPhone = orderPhone;
-		}
-
-		public String getOrderInstruction() {
-			return orderInstruction;
-		}
-
-		public void setOrderInstruction(String orderInstruction) {
-			this.orderInstruction = orderInstruction;
-		}
-
-		public Long getIdProducts() {
+		public Long getProducts_idproducts() {
 			return products_idproducts;
 		}
 
-		public void setIdProducts(Long idProducts) {
-			this.products_idproducts = idProducts;
+		public String getOrder_Colonia() {
+			return order_Colonia;
 		}
-
-
-
-		
 		//toString
+
 		@Override
 		public String toString() {
-			return "Order [IdOrder=" + IdOrder + ", orderAmount=" + orderAmount + ", orderShipName=" + orderShipName
-					+ ", orderShipStreet=" + orderShipStreet + ", orderNumberOutdoor=" + orderNumberOutdoor
-					+ ", orderNumberInterior=" + orderNumberInterior + ", orderZip=" + orderZip + ", orderAlcaldia="
-					+ orderAlcaldia + ", orderPhone=" + orderPhone + ", orderInstruction=" + orderInstruction
-					+ ", idProducts=" + products_idproducts + "]";
+			return "Order [id_Order=" + id_Order + ", order_Amount=" + order_Amount + ", order_Ship_Name="
+					+ order_Ship_Name + ", order_Ship_Street=" + order_Ship_Street + ", order_Number_Outdoor="
+					+ order_Number_Outdoor + ", order_Number_Interior=" + order_Number_Interior + ", order_Colonia="
+					+ order_Colonia + ", order_Zip=" + order_Zip + ", order_Alcaldia=" + order_Alcaldia
+					+ ", order_Phone=" + order_Phone + ", order_Instruction=" + order_Instruction
+					+ ", products_idproducts=" + products_idproducts + "]";
 		}
+		
+		
 		
 }
 
